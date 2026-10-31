@@ -1,39 +1,21 @@
 # ppal-portal
 
-Portal web — canal opcional del proyecto.
+Optional web portal for the broader PantryPal project. The portal is not part of the accepted mobile MVP and is not required for Activity 3 delivery.
 
-Forma parte del proyecto **PantryPal** (`ppal`) — Ingeniería para el Desarrollo Móvil (posgrado) · CORHUILA 2026-B.
+## Scope status
 
-| | |
-|---|---|
-| Rol | Portal web |
-| Contenerizado | Sí: se entrega con su `Dockerfile`. |
-| Gobierno y documentación | [`ppal-docs`](https://github.com/code-corhuila/ppal-docs) |
-| Backlog | GitHub Project `ppal-backlog` |
+- Status: out of the current MVP.
+- The required client for the course deliverable is ppal-app, built with Ionic, Angular, and Capacitor.
+- Do not add portal-only scope to the mobile release backlog unless an explicit scope decision is approved.
 
-## Ramas
+## Repository workflow
 
-| Rama | Uso |
-|---|---|
-| `develop` | Integración (rama por defecto) |
-| `qa` | Pruebas |
-| `main` | Producción |
+This repository uses develop for integration, qa for verification, and main for approved releases. Submit changes through a short-lived feat/, fix/, chore/, or docs/ branch and a pull request. Do not commit directly to protected branches or use force-push.
 
-**Todo cambio a `develop`, `qa` o `main` entra por pull request.** Ninguna de las tres admite
-commits directos, force-push ni borrado (tampoco para administradores).
+## Shared project governance
 
-1. Trabajo diario: rama `feat/<tema>` o `fix/<tema>` desde `develop` → PR a `develop`.
-2. Promoción: PR `develop` → `qa` y PR `qa` → `main`.
-3. El PR a `main` necesita la aprobación del docente. La rama de trabajo se borra al fusionar.
+The authoritative project scope, ADRs, API contract, and release guidance live in ppal-docs. Separate repositories organize source code; they do not imply a microservice per repository.
 
-## Repositorios del proyecto
+## Security
 
-| Repositorio | Rol |
-|---|---|
-| [`ppal-docs`](https://github.com/code-corhuila/ppal-docs) | Gobierno único del proyecto |
-| [`ppal-api`](https://github.com/code-corhuila/ppal-api) | Core de negocio (API) |
-| [`ppal-app`](https://github.com/code-corhuila/ppal-app) | Aplicación móvil |
-| [`ppal-portal`](https://github.com/code-corhuila/ppal-portal) | Portal web |
-| [`ppal-db`](https://github.com/code-corhuila/ppal-db) | Migraciones de base de datos |
-| [`ppal-infra`](https://github.com/code-corhuila/ppal-infra) | Infraestructura y orquestación |
-| [`ppal-tools`](https://github.com/code-corhuila/ppal-tools) | Paquete de herramientas |
+Do not publish sensitive data or secrets. Any future public portal needs a separate scope decision and security review before deployment.
